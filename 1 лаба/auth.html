@@ -9,34 +9,32 @@
     <meta name="description" content="1 лаба">
     <meta name="keywords" content="лабораторная работа">
     <title>Подать</title>
-    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="css/auth.css">
     <!--Заголовок страницы-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oswald&family=Sansita+Swashed:wght@600&display=swap" rel="stylesheet">
 </head>
-<body>
-    <center>
-    <h1>
-        Поздравляю!<br> Вы на верном пути<br> Заполните данные о себе
-    </h1> 
-        <br>
-            <br>
-    <div  class = "enter_menu_countainer">
+<body class="kent">
+    <div class="bum">
+        <b><p>Поздравляю!</p>
+        <p>Вы на верном пути</p>
+        <p>Заполните данные о себе</p></b>
+        
+     
+    
     <form action="https://httpbin.org/post" method="post">
-    <input name="Login" id="Login" type="text" placeholder="Ваш логин" class="iol">
-        <br>
-            <br>
-    <input name = "Password" id="password" type="password" placeholder="пароль" class="iol">
-    <br>
-        <br>
-    <input name = "Remember" id="remember" type="checkbox">
-    <label for="remember">Запомнить?</label>
-    <br>
-        <br>
 
+    <input name="Login" id="Login" type="text" placeholder="Ваш логин" class="iol">
+    <input name = "Password" id="password" type="password" placeholder="пароль" class="iol">
+
+    <p><input name = "Remember" id="remember" type="checkbox">
+    <label for="remember">Запомнить?</label></p>
+    
     <button>Do something</button>
+
     </form>
-    </div>  
-</center>  
+     
+    </div>
+
 </body>
