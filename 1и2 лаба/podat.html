@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--Версия html-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--кодировка-->
+    <meta name="author" content="Николаев Михаил">
+    <meta name="description" content="1 лаба">
+    <meta name="keywords" content="лабораторная работа">
+    <title>Подать</title>
+    <link rel="stylesheet" href="css/podat.css">
+    <!--Заголовок страницы-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Oswald&family=Sansita+Swashed:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <center>
+    <h1>
+        Поздравляю!<br> Вы на верном пути<br> Заполните данные о себе
+    </h1> 
+        <br>
+            <br>
+    <div  class = "enter_menu_countainer">
+    <form action="https://httpbin.org/post" method="post">
+    <input name="Name" id="name" type="text" placeholder="Ваше имя" class="iol">
+        <br>
+            <br>
+    <input name="Surename" id="surename" type="text" placeholder="Ваша фамилия" class="iol">
+        <br>    
+            <br>
+    <input name="Date" id="date" type="date" title="Дата рождения" class="iol"> 
+        <br>
+            <br>
+    <input name="Email" id="email" type="email" placeholder="ваша почта" class="iol"> 
+        <br>
+            <br>
+    <input name="Phone" id="phone" placeholder="номер телефона" class="iol"> 
+        <br>
+            <br>
+    <input name = "Password" id="password" type="password" placeholder="пароль" class="iol">
+        <br>
+            <br>
+    <input name = "File" id="file" type="file" placeholder="Вложение">
+        <br>
+            <br>
+    <input name = "Solution" id="solution" type="checkbox">
+    <label for = "solution">Даю согласие на обработку персональных данных</label>
+        <br>
+            <br>
+    <button>Do something</button>
+    </form>
+    </div>  
+</center>  
+</body>

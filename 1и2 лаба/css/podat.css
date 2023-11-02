@@ -1,0 +1,18 @@
+a, a:link, a:hover, a:visited{ 
+    color: black;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+iol {
+    border-radius: 10px;
+    color: #a88989;
+
+}
+
+enter_menu_countainer{
+    border-radius: 10px;
+    color: #a1a1a1;
+}
