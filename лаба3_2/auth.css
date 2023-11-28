@@ -1,0 +1,133 @@
+html {
+    background-color:gray;
+    background-blend-mode:overlay;
+    align-items:center;
+    justify-content:center;
+    background-image:url(images/back.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    height:100%;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+  
+.header {
+    background-color: black;
+    color: white;
+    background-image: url(../images/backh.jpg);
+    height: 265px;
+    margin-bottom: 10px;
+  }
+  
+  .container {
+    max-width: 79%;
+    margin: 0 auto;
+  }
+  
+  .main-menu {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 20px 0;
+  }
+  
+  
+  .main-menu a:hover {
+    color: red;
+  }
+  
+  .main-menu a {
+    text-decoration: none;
+    color: white;
+    margin-right: 4px;
+  }
+  
+  main p {
+    text-align: justify; /*для растягивания текста*/
+  }
+  .registration-cssave{
+    padding:50px 0;
+  }
+  
+
+  .registration-cssave button
+  {
+    width: 100%;
+text-align: center;
+  }
+  .registration-cssave form {
+    
+    max-width:800px;
+    
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    position: fixed; top: 35%; left: 40%;
+    padding:50px 70px;
+    border-radius:10px;
+    box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+    background-color:#fff;
+  }
+  
+  .registration-cssave form h3 {
+    font-weight:bold;
+    margin-bottom:30px;
+  }
+  
+  .registration-cssave .item {
+    border-radius:10px;
+    margin-bottom:25px;
+    padding:10px 20px;
+  }
+  
+  .registration-cssave .create-account {
+    border-radius:30px;
+    padding:10px 20px;
+    font-size:18px;
+    font-weight:bold;
+    background-color:#3f93ff;
+    border:none;
+    color:white;
+    margin-top:20px;
+  }
+  
+  @media (max-width: 576px) {
+    .registration-cssave form {
+      padding:50px 20px;
+    }
+  }
+
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    margin-top: 2rem;
+  }
+  
+  
+  .text-center {
+    text-align: center;
+  }
+
+  .contact-me-btn {
+    color: white;
+    border-color: white;
+    font-size: 1.2;
+    display: inline-block;
+    float: right;
+  }
+
+  .btn {
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+    border: 2px solid blue;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

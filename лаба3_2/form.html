@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nikolaev</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="form.css">
+  </head>
+  <body>
+
+<h2 class="h2">
+    <div class="container">
+        <nav class="main-menu">
+        <a href="index.html">Back</a>
+        </nav>
+    </div>
+    </h2>
+
+<main>
+    <form action="https://httpbin.org/post" method="post" class="form-example">
+      <div class="form-example">
+        <p for="name">ФИО: </p>
+        <input type="text" name="name" id="name" required />
+      </div>
+      <div class="form-example">
+        <p for="email">EMAIL </p>
+        <input type="text" name="email" id="email" required />
+      </div>
+      <div class="form-example">
+
+        <label>Откуда узнали о нас</label>
+      
+        <div>
+          <input type="radio" id="school" name="choice" value="school" checked />
+          <label for="school">В школе</label>
+        </div>
+      
+        <div>
+          <input type="radio" id="friends" name="choice" value="friends" />
+          <label for="friends">Знакомые</label>
+        </div>
+      
+        <div>
+          <input type="radio" id="internet" name="choice" value="internet" />
+          <label for="internet">Интернет</label>
+        </div>
+      </div>
+      <div class="form-example">
+        <label>Тип обращения</label>
+        <select name="select">
+          <option value="complaint">Жалоба</option>
+          <option value="offers">Предложение</option>
+        </select>
+    </div>
+    <div class="form-example">
+      <textarea name="message" cols="30" rows="4" placeholder="Введите сообщение"></textarea>
+    </div>
+    <div class="form-example">
+      <p><input type="file" name="file">
+    </div>
+    <div class="form-example">
+      <div>
+        <input type="checkbox" id="approval" name="approval" checked />
+        <label for="approval">Я согласен на обработку персональных данных</label>
+      </div>
+    </div>
+      <div class="form-example">
+        <input type="submit" value="Subscribe!" />
+      </div>
+    </form>
+    
+  </main>
+  <footer class="footer">
+    <div class="container">
+      &copy; Николаев М.А.
+     <a class="btn contact-me-btn" href="https://t.me/Osin_hjj">Написать мне</a>
+    </div>
+  </footer>
+</body>
+</html>

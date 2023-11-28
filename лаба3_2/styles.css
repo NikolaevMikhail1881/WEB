@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  background-color: black;
+  color: white;
+  background-image: url(../images/backh.jpg);
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.main-menu {
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.main-menu a:hover {
+  color: red;
+}
+
+.main-menu a {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+}
+
+main p {
+  text-align: justify; /*для растягивания текста*/
+}
+
+.avatar {
+  height: 455px;
+  text-align: center;
+  margin: 3rem 0;
+  background-image: url(../images/back.jpg);
+  background-repeat: no-repeat;
+  background-position: left;
+  margin-right: 100px;
+}
+
+.avatar img {
+  height: 100%;
+}
+
+.btn {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+  border: 2px solid blue;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  text-decoration: none;
+  color: blue;
+  font-weight: bold;
+  border: 2px solid blue;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.contact-me-btn {
+  color: white;
+  border-color: white;
+  font-size: 1.2;
+  display: inline-block;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 20px 0;
+  margin-top: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.py-5 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+
+.contact-me-btn
+{
+  float: right;
+}
+
+.button {
+  background-color: #FF4500;
+  border: none;
+  color: white;
+  padding: 20px 34px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+

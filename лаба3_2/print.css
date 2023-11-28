@@ -1,0 +1,17 @@
+.sidebar, .scroll-to-top-btn, .header {
+    display: none;
+}
+.events-list {
+    justify-content:space-between;
+}
+.events {
+    text-align: center;
+}
+.control .btn {
+    border: 1px solid black;
+    color: black;
+}
+
+footer {
+    display: none;
+}
