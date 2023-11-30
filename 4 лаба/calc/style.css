@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+
+.buttons
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.calc-container {
+  width: 500px;
+  border: 1px solid;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0 5px 20px;
+  background: rgb(90, 87, 86);
+  border-radius: 10px;
+}
+
+.screen {
+  width: 92.3%;
+  margin: 20px auto;
+  font-family: 'Audiowide', cursive;
+  text-align: right;
+}
+.answer {
+    background: #89b4ca;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding-right: 5px;
+  }
+.answer {
+  height: 50px;
+  font-size: 2em;
+  border-bottom: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.digits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.other {
+display: flex;
+flex-direction: column;
+}
+.other {
+  font-size: 1.5em;
+}
+
+.clear {
+  background: rgb(167, 107, 175);
+  color: white;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  text-align: center;
+  outline: none;
+  font-family: 'Audiowide';
+}
+button:active {
+  transform: translateY(2px);
+}
+
+.digits, .other, .brackets {
+  background: #263238;
+  color: white;
+}
