@@ -1,0 +1,102 @@
+.grc {
+  color: #2DCA74;
+}
+
+html {
+  font-family: "Montserrat";
+  font-weight: 400;
+  height: 200%;
+  min-width: 400px;
+  font-size: 1rem;
+}
+
+@media (min-width: 100px) {
+  html {
+    font-size: 0.7rem;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 992px) {
+  html {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 1200px) {
+  html {
+    font-size: 1rem;
+  }
+}
+.header-blur {
+  backdrop-filter: blur(20px);
+}
+
+.btn-login {
+  border-color: #000;
+}
+
+.btn-days-free {
+  background-color: #2DCA74;
+  color: #fff;
+}
+
+.btn-login:hover, .btn-days-free:hover {
+  background-color: #101111;
+  color: #ffffff;
+}
+
+.hello-message {
+  font-size: 5rem;
+  margin-top: 15rem;
+  font-weight: 600;
+}
+
+.scan-wb {
+  margin-top: 10rem;
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+.for-who {
+  color: #B0B5B5;
+  font-size: 1.5rem;
+  margin-top: 10rem;
+}
+
+.new-or-old {
+  font-size: 5rem;
+}
+
+.list-group-item-title {
+  font-size: 2rem;
+}
+
+.list {
+  width: 30rem;
+  box-shadow: 0px 0px 30px #acacac;
+}
+
+.litem img {
+  height: 100%;
+}
+
+.footer {
+  color: #fff;
+  border-radius: 3rem 3rem 0 0;
+  background-color: #101111;
+}
+
+.footer-links {
+  font-size: 3rem;
+  width: 20rem;
+}
+.footer-links a {
+  color: #fff;
+}
+.footer-links a:hover {
+  color: #aaa;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
