@@ -110,7 +110,7 @@ function pageBtnHandler(event) {
 function searchBtnHandler() {
     let url = new URL("http://cat-facts-api.std-900.ist.mospolytech.ru/facts");
     const searchData = document.querySelector('search-field').value;
-    url.searchParams.append('q', searchData.toString());
+    url.searchParams.append('q', searchData.toString()); 
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url.toString());
     xhr.responseType = 'json';
@@ -121,107 +121,107 @@ function searchBtnHandler() {
     };
     xhr.send();
 }
-function getAutocompleteData() {
-    let url = new URL("http://cat-facts-api.std-900.ist.mospolytech.ru/autocomplete");
-    const currentData = document.getElementsByClassName('search-field')[0].value;
-    url.searchParams.append('q', currentData.toString());
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', url.toString());
-    xhr.responseType = 'text';
-    xhr.onload = function () {
-        setAutocompleteData(JSON.parse(xhr.response));
+function getAutocompleteData() { // функция получения данных для автозаполнения с api -(программный интерфейс для взаимодействия)
+    let url = new URL("http://cat-facts-api.std-900.ist.mospolytech.ru/autocomplete"); // создание переменной url
+    const currentData = document.getElementsByClassName('search-field')[0].value; // текущее значение поля поиска 
+    url.searchParams.append('q', currentData.toString()); // добавление в url параметра q со значением поля поиска 
+    let xhr = new XMLHttpRequest();  // создание xhr - xml httl request 
+    xhr.open('GET', url.toString()); // подготовка гет запроса на url 
+    xhr.responseType = 'text'; // тип ответа - текст 
+    xhr.onload = function () { // при получении ответа сработает функция 
+        setAutocompleteData(JSON.parse(xhr.response)); // вызов функции 
     };
-    xhr.send();
+    xhr.send(); // выполнить запрос 
 }
-function setAutocompleteData(data) {
-    const input = document.getElementById("autocomplete-input");
-    const autocompleteList = document.getElementById("autocomplete-list");
-    if (!autocompleteList)
-        return;
-    function setBorder() {
-        if (!autocompleteList)
-            return;
+function setAutocompleteData(data) { // функция установки данных автозаполнения 
+    const input = document.getElementById("autocomplete-input"); // получение элемента 
+    const autocompleteList = document.getElementById("autocomplete-list"); // получение элемента 
+    if (!autocompleteList) // если лист пустой 
+        return; // выход 
+    function setBorder() { // функция постановки границ окна подсказки 
+        if (!autocompleteList) // если лист пустой 
+            return; // выход
         autocompleteList.style.border = "5px solid #e63946";
         autocompleteList.style.borderTop = "none";
         input.style.borderBottom = "none";
     }
-    function delBorder() {
-        if (!autocompleteList)
-            return;
+    function delBorder() { // // функция удаления границ окна подсказки
+        if (!autocompleteList) // если лист пустой 
+            return; // выход
         autocompleteList.style.border = "none";
         input.style.borderBottom = "5px solid #e63946";
     }
-    if (!data || data.length == 0) {
-        autocompleteList.innerHTML = "";
-        delBorder();
+    if (!data || data.length == 0) { // если дата пустая (дополнений нет) 
+        autocompleteList.innerHTML = ""; // автозаполнение пустое 
+        delBorder(); // удаление границ 
     }
     else {
-        setBorder();
+        setBorder(); // создание границ 
     }
-    input.addEventListener("keyup", function (event) {
-        if (event.key === "Enter")
-            return;
-        autocompleteList.innerHTML = "";
-        for (let str of data) {
-            const listItem = document.createElement("li");
-            listItem.classList.add("autocomplete-item");
-            listItem.textContent = str;
-            listItem.addEventListener("click", function () {
-                input.value = str;
-                autocompleteList.innerHTML = "";
-                delBorder();
+    input.addEventListener("keyup", function (event) { // при отпускании кнопки 
+        if (event.key === "Enter") // кнопки ентер 
+            return; // выход 
+        autocompleteList.innerHTML = ""; // обнуление 
+        for (let str of data) { // проход по значениям данных 
+            const listItem = document.createElement("li"); // создание элемента списка 
+            listItem.classList.add("autocomplete-item"); // добавление класса 
+            listItem.textContent = str; // добавление в элемент контента 
+            listItem.addEventListener("click", function () { // добавление события по клику 
+                input.value = str; // подставление в строку ввода значения автодополнения 
+                autocompleteList.innerHTML = ""; // обнуление 
+                delBorder(); // удаление границ 
             });
-            autocompleteList.appendChild(listItem);
+            autocompleteList.appendChild(listItem); // добавление в автозаполнение элемента 
         }
     });
 }
-window.onload = function () {
-    var _a;
-    downloadData();
-    const paginationElement = document.querySelector('.pagination');
-    if (paginationElement) {
-        paginationElement.onclick = pageBtnHandler;
+window.onload = function () { // момент загрузки окна 
+    var _a; 
+    downloadData(); // вызов функции 
+    const paginationElement = document.querySelector('.pagination'); // получение элементов с классом 
+    if (paginationElement) { // если элемент существует 
+        paginationElement.onclick = pageBtnHandler; // при клике сработает обработчик pageBtnHandler
     }
-    const perPageBtn = document.querySelector('.per-page-btn');
-    if (perPageBtn) {
-        perPageBtn.onchange = perPageBtnHandler;
+    const perPageBtn = document.querySelector('.per-page-btn'); //  получение элементов с классом
+    if (perPageBtn) { // если элемент существует
+        perPageBtn.onchange = perPageBtnHandler; // при изменении сработает обработчик perPageBtnHandler
     }
-    function searchHandler() {
-        const autocompleteList = document.getElementById("autocomplete-list");
-        const input = document.getElementById("autocomplete-input");
-        if (autocompleteList)
-            autocompleteList.innerHTML = "";
-        if (!autocompleteList)
-            return;
-        autocompleteList.style.border = "none";
-        input.style.borderBottom = "5px solid #e63946";
-        let url = new URL("http://cat-facts-api.std-900.ist.mospolytech.ru/facts");
-        const searchData = document.getElementsByClassName('search-field')[0].value;
-        url.searchParams.append('q', searchData.toString());
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', url.toString());
-        xhr.responseType = 'json';
-        xhr.onload = function () {
-            renderRecords(this.response.records);
-            setPaginationInfo(this.response['_pagination']);
+    function searchHandler() { // обработчик поиска searchHandler - кнопка поиска
+        const autocompleteList = document.getElementById("autocomplete-list"); // получение элемента с классом 
+        const input = document.getElementById("autocomplete-input"); // получение элемента с классом 
+        if (autocompleteList) // если лист существует 
+            autocompleteList.innerHTML = ""; // обнуление 
+        if (!autocompleteList) // если его нет 
+            return; // выход 
+        autocompleteList.style.border = "none"; // скрытие границы 
+        input.style.borderBottom = "5px solid #e63946"; // нижняя граница 
+        let url = new URL("http://cat-facts-api.std-900.ist.mospolytech.ru/facts"); // создание url 
+        const searchData = document.getElementsByClassName('search-field')[0].value; // получение значения первого элемента в классе 
+        url.searchParams.append('q', searchData.toString()); // добавление параметра q  со значением  searchData в url
+        let xhr = new XMLHttpRequest(); // создание xhr - xml httl request 
+        xhr.open('GET', url.toString()); // подготовка гет запроса на url
+        xhr.responseType = 'json'; // тип ответа json 
+        xhr.onload = function () { // когда получен ответ от сервера 
+            renderRecords(this.response.records); 
+            setPaginationInfo(this.response['_pagination']);                      // выполняются три функции 
             renderPaginationElement(this.response['_pagination']);
         };
-        xhr.send();
-        input.value = "";
+        xhr.send(); // выполнить запрос 
+        input.value = "";  // обнуление инпута
     }
-    function handleEnterKey(event) {
-        if (event.key === "Enter") {
-            searchHandler();
+    function handleEnterKey(event) { // обработка нажатия энтера
+        if (event.key === "Enter") { // если нажали энтер 
+            searchHandler(); // выполняется 
         }
     }
-    const searchBtn = document.querySelector('.search-btn');
-    searchBtn === null || searchBtn === void 0 ? void 0 : searchBtn.addEventListener('click', searchHandler);
-    const inputElement = document.getElementById("autocomplete-input");
-    inputElement === null || inputElement === void 0 ? void 0 : inputElement.addEventListener("keydown", handleEnterKey);
-    const autocomplete = document.getElementsByClassName('search-field')[0];
-    autocomplete.addEventListener('input', function () {
-        getAutocompleteData();
+    const searchBtn = document.querySelector('.search-btn'); // получение кнопки поиска 
+    searchBtn === null || searchBtn === void 0 ? void 0 : searchBtn.addEventListener('click', searchHandler); // проверка на null (существование)
+    const inputElement = document.getElementById("autocomplete-input"); // получение строки поиска 
+    inputElement === null || inputElement === void 0 ? void 0 : inputElement.addEventListener("keydown", handleEnterKey); // добавление eventlistener если строка поиска не null или undefined 
+    const autocomplete = document.getElementsByClassName('search-field')[0]; // получение строки поиска 
+    autocomplete.addEventListener('input', function () { // добавляем слушателя событий 
+        getAutocompleteData(); // вызывается функция автозаполнения
     });
     // if (autocompleteList?.innerHTML)
-    document.getElementById("autocomplete-list").style.width = ((_a = document.getElementById("input-container")) === null || _a === void 0 ? void 0 : _a.offsetWidth) - 10 + "px";
+    document.getElementById("autocomplete-list").style.width = ((_a = document.getElementById("input-container")) === null || _a === void 0 ? void 0 : _a.offsetWidth) - 10 + "px"; // изменение ширины 
 };
